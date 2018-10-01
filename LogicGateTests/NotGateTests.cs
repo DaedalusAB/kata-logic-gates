@@ -22,9 +22,9 @@ namespace LogicGateTests
                 .WithOutput(output)
                 .Build();
 
-            notGate.Trigger();
+            notGate.Emit();
 
-            Assert.True(notGate.State());
+            Assert.True(notGate.State);
         }
 
         [Fact]
@@ -38,9 +38,9 @@ namespace LogicGateTests
                 .WithOutput(output)
                 .Build();
 
-            notGate.Trigger();
+            notGate.Emit();
 
-            Assert.False(notGate.State());
+            Assert.False(notGate.State);
         }
     }
 }
