@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using LogicGates;
+﻿using LogicGates;
 using LogicGateTests.Builders;
 using Xunit;
 

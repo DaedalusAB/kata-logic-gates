@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace LogicGates.Gates
 {
@@ -11,7 +9,6 @@ namespace LogicGates.Gates
 
         public bool State =>
             Output.Value;
-        
 
         protected Signal Output { get; }
         protected IEnumerable<Signal> Inputs { get; }
@@ -23,6 +20,5 @@ namespace LogicGates.Gates
         }
 
         protected abstract bool GateFunction();
-
     }
 }

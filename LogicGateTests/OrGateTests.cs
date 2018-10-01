@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using Xunit;
+﻿using Xunit;
 
 using LogicGates;
-using LogicGates.Gates;
 using LogicGateTests.Builders;
 
 namespace LogicGateTests
