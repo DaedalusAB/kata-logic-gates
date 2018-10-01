@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace LogicGates.Gates
 {
@@ -7,16 +8,16 @@ namespace LogicGates.Gates
         public void Emit() => 
             Output.Value = GateFunction();
 
-        public bool State =>
+        public bool State() =>
             Output.Value;
 
         protected Signal Output { get; }
-        protected IEnumerable<Signal> Inputs { get; }
+        protected List<Signal> Inputs { get; }
 
         protected LogicGate(IEnumerable<Signal> inputs, Signal output)
         {
             Output = output;
-            Inputs = inputs;
+            Inputs = inputs.ToList();
         }
 
         protected abstract bool GateFunction();

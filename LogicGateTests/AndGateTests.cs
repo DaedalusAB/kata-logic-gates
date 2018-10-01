@@ -23,7 +23,7 @@ namespace LogicGateTests
 
             andGate.Emit();
 
-            Assert.False(andGate.State);
+            Assert.False(andGate.State());
         }
 
         [Fact]
@@ -41,7 +41,7 @@ namespace LogicGateTests
 
             andGate.Emit();
 
-            Assert.False(andGate.State);
+            Assert.False(andGate.State());
         }
 
         [Fact]
@@ -59,7 +59,7 @@ namespace LogicGateTests
 
             andGate.Emit();
 
-            Assert.True(andGate.State);
+            Assert.True(andGate.State());
         }
     }
 }

@@ -21,7 +21,7 @@ namespace LogicGateTests
 
             notGate.Emit();
 
-            Assert.True(notGate.State);
+            Assert.True(notGate.State());
         }
 
         [Fact]
@@ -37,7 +37,7 @@ namespace LogicGateTests
 
             notGate.Emit();
 
-            Assert.False(notGate.State);
+            Assert.False(notGate.State());
         }
     }
 }
