@@ -3,20 +3,26 @@ using System.Linq;
 
 namespace LogicGates.Gates
 {
-    public class OrGate
+    public class OrGate : ILogicGate
     {
-        public IEnumerable<Signal> Inputs { get; set; }
+        public IEnumerable<Signal> Inputs;
+        public Signal Output;
 
-        public OrGate(IEnumerable<Signal> inputs)
+        public OrGate(IEnumerable<Signal> inputs, Signal output)
         {
             Inputs = inputs;
+            Output = output;
         }
 
-        public Signal Trigger()
+        public void Trigger()
         {
-            return Inputs.Any(signal => signal.Value)
-                ? new Signal(true)
-                : new Signal(false);
+            if (Inputs.Any(signal => signal.Value))
+                Output.Activate();
+            else
+                Output.Deactivate();
         }
+
+        public bool State() =>
+            Output.Value;
     }
 }

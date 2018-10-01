@@ -1,6 +1,9 @@
-﻿using Xunit;
+﻿using System;
+using System.Collections.Generic;
+using Xunit;
 
 using LogicGates;
+using LogicGates.Gates;
 using LogicGateTests.Builders;
 
 namespace LogicGateTests
@@ -12,50 +15,55 @@ namespace LogicGateTests
         [Fact]
         public void Zero_And_Zero_Is_Zero()
         {
-
+            var output = new Signal();
             var orGate = OrGateBuilder
                 .WithInputs(new[]
                 {
                     new Signal(false),
                     new Signal(false),
                 })
+                .WithOutput(output)
                 .Build();
 
-            var output = orGate.Trigger();
+            orGate.Trigger();
 
-            Assert.False(output.Value);
+            Assert.False(orGate.State());
         }
 
         [Fact]
         public void Zero_And_One_Is_One()
         {
+            var output = new Signal();
             var orGate = OrGateBuilder
                 .WithInputs(new[]
                 {
                     new Signal(false),
                     new Signal(true),
                 })
+                .WithOutput(output)
                 .Build();
 
-            var output = orGate.Trigger();
+            orGate.Trigger();
 
-            Assert.True(output.Value);
+            Assert.True(orGate.State());
         }
 
         [Fact]
         public void One_And_One_Is_One()
         {
+            var output = new Signal();
             var orGate = OrGateBuilder
                 .WithInputs(new[]
                 {
                     new Signal(true),
                     new Signal(true),
                 })
+                .WithOutput(output)
                 .Build();
 
-            var output = orGate.Trigger();
+            orGate.Trigger();
 
-            Assert.True(output.Value);
+            Assert.True(orGate.State());
         }
     }
 }

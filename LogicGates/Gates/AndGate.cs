@@ -3,20 +3,27 @@ using System.Linq;
 
 namespace LogicGates.Gates
 {
-    public class AndGate
+    public class AndGate : ILogicGate
     {
-        public IEnumerable<Signal> Inputs { get; set; }
+        public IEnumerable<Signal> Inputs;
+        public Signal Output;
 
-        public AndGate(IEnumerable<Signal> inputs)
+        public AndGate(IEnumerable<Signal> inputs, Signal output)
         {
             Inputs = inputs;
+            Output = output;
         }
 
-        public Signal Trigger()
+        public void Trigger()
         {
-            return Inputs.All(signal => signal.Value)
-                ? new Signal(true)
-                : new Signal(false);
+            if (Inputs.All(signal => signal.Value))
+                Output.Activate();
+            else
+                Output.Deactivate();
         }
+
+        public bool State() =>
+            Output.Value;
+        
     }
 }

@@ -1,12 +1,12 @@
 ﻿using LogicGates;
 using LogicGates.Gates;
-using LogicGateTests.Builders;
 
-namespace LogicGateTests
+namespace LogicGateTests.Builders
 {
     internal class OrGateBuilder
     {
         private Signal[] _inputs;
+        private Signal _output;
 
         public OrGateBuilder WithInputs(Signal[] inputs)
         {
@@ -14,10 +14,15 @@ namespace LogicGateTests
             return this;
         }
 
+        public OrGateBuilder WithOutput(Signal output)
+        {
+            _output = output;
+            return this;
+        }
+
         public OrGate Build()
         {
-            var gate = new OrGate(_inputs);
-            return gate;
+            return new OrGate(_inputs, _output);
         }
     }
 }

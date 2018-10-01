@@ -3,9 +3,10 @@ using LogicGates.Gates;
 
 namespace LogicGateTests.Builders
 {
-    class AndGateBuilder
+    internal class AndGateBuilder
     {
         private Signal[] _inputs;
+        private Signal _output;
         
         public AndGateBuilder WithInputs(Signal[] inputs)
         {
@@ -13,10 +14,15 @@ namespace LogicGateTests.Builders
             return this;
         }
 
+        public AndGateBuilder WithOutput(Signal output)
+        {
+            _output = output;
+            return this;
+        }
+
         public AndGate Build()
         {
-            var gate = new AndGate(_inputs);
-            return gate;
+            return new AndGate(_inputs, _output);
         }
     }
 }
