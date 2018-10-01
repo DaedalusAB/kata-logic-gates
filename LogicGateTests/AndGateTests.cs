@@ -1,6 +1,5 @@
+using LogicGates;
 using Xunit;
-
-using LogicGates.Signals;
 using LogicGateTests.Builders;
 
 namespace LogicGateTests

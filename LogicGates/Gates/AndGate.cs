@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using LogicGates.Signals;
 
-namespace LogicGates
+namespace LogicGates.Gates
 {
     public class AndGate
     {

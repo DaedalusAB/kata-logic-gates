@@ -1,5 +1,5 @@
 ﻿using LogicGates;
-using LogicGates.Signals;
+using LogicGates.Gates;
 
 namespace LogicGateTests.Builders
 {

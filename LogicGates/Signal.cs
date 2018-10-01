@@ -1,4 +1,4 @@
-﻿namespace LogicGates.Signals
+﻿namespace LogicGates
 {
     public class Signal
     {
