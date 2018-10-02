@@ -8,13 +8,7 @@ namespace LogicGateTests.Builders
     internal class AndGateBuilder
     {
         private readonly List<IHaveOutput> _inputs = new List<IHaveOutput>();
-
-        public AndGateBuilder WithInputs(IEnumerable<IHaveOutput> inputs)
-        {
-            _inputs.AddRange(inputs.ToList());
-            return this;
-        }
-
+        
         public AndGateBuilder WithInput(IHaveOutput input)
         {
             _inputs.Add(input);

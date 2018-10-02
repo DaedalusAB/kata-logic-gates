@@ -18,11 +18,8 @@ namespace LogicGateTests
                 .Build();
 
             var orGate = OrGateBuilder
-                .WithInputs(new[]
-                {
-                    Signal.AnInactiveSignal(),
-                    Signal.AnActiveSignal()
-                })
+                .WithInput(Signal.AnInactiveSignal())
+                .WithInput(Signal.AnActiveSignal())
                 .Build();
 
             var andGate = AndGateBuilder

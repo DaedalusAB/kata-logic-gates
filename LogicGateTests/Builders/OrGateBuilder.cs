@@ -8,13 +8,7 @@ namespace LogicGateTests.Builders
     internal class OrGateBuilder
     {
         private readonly List<IHaveOutput> _inputs = new List<IHaveOutput>();
-
-        public OrGateBuilder WithInputs(IEnumerable<IHaveOutput> inputs)
-        {
-            _inputs.AddRange(inputs.ToList());
-            return this;
-        }
-
+        
         public OrGateBuilder WithInput(IHaveOutput input)
         {
             _inputs.Add(input);
