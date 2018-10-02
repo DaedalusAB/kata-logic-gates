@@ -3,18 +3,18 @@ using LogicGates.Abstractions;
 
 namespace LogicGates
 {
-    public abstract class LogicGate : IStateful, IHaveInputs
+    public abstract class LogicGate : IOutputState, IHaveInputs
     {
         protected Signal Output { get; }
-        protected List<IStateful> Inputs { get; set; }
+        protected List<IOutputState> Inputs { get; set; }
 
         protected LogicGate()
         {
             Output = new Signal();
-            Inputs = new List<IStateful>();
+            Inputs = new List<IOutputState>();
         }
 
-        public void AddInput(IStateful input) =>
+        public void AddInput(IOutputState input) =>
             Inputs.Add(input);
 
         public abstract bool State();

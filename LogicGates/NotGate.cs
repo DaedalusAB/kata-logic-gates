@@ -12,9 +12,9 @@ namespace LogicGates
             return Output.State();
         }
 
-        public new void AddInput(IStateful input)
+        public new void AddInput(IOutputState input)
         {
-            Inputs = new List<IStateful>() { input };
+            Inputs = new List<IOutputState>() { input };
         }
     }
 }

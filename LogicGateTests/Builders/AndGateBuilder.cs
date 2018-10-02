@@ -7,15 +7,15 @@ namespace LogicGateTests.Builders
 {
     internal class AndGateBuilder
     {
-        private readonly List<IStateful> _inputs = new List<IStateful>();
+        private readonly List<IOutputState> _inputs = new List<IOutputState>();
 
-        public AndGateBuilder WithInputs(IEnumerable<IStateful> inputs)
+        public AndGateBuilder WithInputs(IEnumerable<IOutputState> inputs)
         {
             _inputs.AddRange(inputs.ToList());
             return this;
         }
 
-        public AndGateBuilder WithInput(IStateful input)
+        public AndGateBuilder WithInput(IOutputState input)
         {
             _inputs.Add(input);
             return this;

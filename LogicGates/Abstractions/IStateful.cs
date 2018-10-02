@@ -1,6 +1,6 @@
 ﻿namespace LogicGates.Abstractions
 {
-    public interface IStateful
+    public interface IOutputState
     {
         bool State();
     }
