@@ -8,7 +8,10 @@ namespace LogicGates
         {
         }
 
-        public override void Emit() =>
+        public override bool State()
+        {
             Output.SetState(!Inputs.First().State());
+            return Output.State();
+        }
     }
 }

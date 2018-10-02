@@ -21,8 +21,6 @@ namespace LogicGateTests
                 .WithOutput(output)
                 .Build();
 
-            andGate.Emit();
-
             Assert.False(andGate.State());
         }
 
@@ -39,8 +37,6 @@ namespace LogicGateTests
                 .WithOutput(output)
                 .Build();
 
-            andGate.Emit();
-
             Assert.False(andGate.State());
         }
 
@@ -56,8 +52,6 @@ namespace LogicGateTests
                 })
                 .WithOutput(output)
                 .Build();
-
-            andGate.Emit();
 
             Assert.True(andGate.State());
         }

@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
 namespace LogicGates
 {
@@ -14,12 +13,9 @@ namespace LogicGates
             Inputs = new List<IConnectable>();
         }
 
-        public abstract void Emit();
-
         public void AddInput(IConnectable input) =>
             Inputs.Add(input);
 
-        public bool State() =>
-            Output.State();
+        public abstract bool State();
     }
 }
