@@ -4,6 +4,9 @@ namespace LogicGates
 {
     public class Signal : IOutputState
     {
+        public static Signal AnActiveSignal() => new Signal(true);
+        public static Signal AnInactiveSignal() => new Signal(false);
+
         private bool _value;
 
         public Signal(bool value = false)

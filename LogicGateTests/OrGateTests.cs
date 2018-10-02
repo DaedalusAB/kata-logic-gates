@@ -1,7 +1,6 @@
-﻿using Xunit;
-
-using LogicGates;
+﻿using LogicGates;
 using LogicGateTests.Builders;
+using Xunit;
 
 namespace LogicGateTests
 {
@@ -15,8 +14,8 @@ namespace LogicGateTests
             var orGate = OrGateBuilder
                 .WithInputs(new[]
                 {
-                    new Signal(false),
-                    new Signal(false),
+                    Signal.AnInactiveSignal(),
+                    Signal.AnInactiveSignal()
                 })
                 .Build();
 
@@ -29,8 +28,8 @@ namespace LogicGateTests
             var orGate = OrGateBuilder
                 .WithInputs(new[]
                 {
-                    new Signal(false),
-                    new Signal(true),
+                    Signal.AnInactiveSignal(),
+                    Signal.AnActiveSignal()
                 })
                 .Build();
 
@@ -43,8 +42,8 @@ namespace LogicGateTests
             var orGate = OrGateBuilder
                 .WithInputs(new[]
                 {
-                    new Signal(true),
-                    new Signal(true),
+                    Signal.AnActiveSignal(),
+                    Signal.AnActiveSignal()
                 })
                 .Build();
 

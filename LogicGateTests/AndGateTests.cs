@@ -1,6 +1,6 @@
 using LogicGates;
-using Xunit;
 using LogicGateTests.Builders;
+using Xunit;
 
 namespace LogicGateTests
 {
@@ -14,8 +14,8 @@ namespace LogicGateTests
             var andGate = AndGateBuilder
                 .WithInputs(new[]
                 {
-                    new Signal(false),
-                    new Signal(false),
+                    Signal.AnInactiveSignal(),
+                    Signal.AnInactiveSignal()
                 })
                 .Build();
 
@@ -28,8 +28,8 @@ namespace LogicGateTests
             var andGate = AndGateBuilder
                 .WithInputs(new[]
                 {
-                    new Signal(false),
-                    new Signal(true),
+                    Signal.AnActiveSignal(),
+                    Signal.AnInactiveSignal()
                 })
                 .Build();
 
@@ -42,8 +42,8 @@ namespace LogicGateTests
             var andGate = AndGateBuilder
                 .WithInputs(new[]
                 {
-                    new Signal(true),
-                    new Signal(true),
+                    Signal.AnActiveSignal(),
+                    Signal.AnActiveSignal()
                 })
                 .Build();
 

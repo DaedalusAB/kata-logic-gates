@@ -13,7 +13,7 @@ namespace LogicGateTests
         {
             var notGate = NotGateBuilder
                 .WithInput(
-                    new Signal(false)
+                    Signal.AnInactiveSignal()
                 )
                 .Build();
 
@@ -25,7 +25,7 @@ namespace LogicGateTests
         {
             var notGate = NotGateBuilder
                 .WithInput(
-                    new Signal(true)
+                    Signal.AnActiveSignal()
                 )
                 .Build();
 
