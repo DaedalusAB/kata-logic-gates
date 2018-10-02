@@ -8,14 +8,14 @@ namespace LogicGateTests
         [Fact]
         public void BasicCompositeCircuit()
         {
-            var notGate = LogicGateFactory.NotGate();
-            notGate.AddInput(Generator.AnInactiveSignal());
+            var notGate = LogicElementFactory.NotGate();
+            notGate.SetInput(LogicElementFactory.InactiveGenerator());
 
-            var orGate = LogicGateFactory.OrGate();
-            orGate.AddInput(Generator.AnInactiveSignal());
-            orGate.AddInput(Generator.AnActiveSignal());
+            var orGate = LogicElementFactory.OrGate();
+            orGate.AddInput(LogicElementFactory.InactiveGenerator());
+            orGate.AddInput(LogicElementFactory.ActiveGenerator());
 
-            var andGate = LogicGateFactory.AndGate();
+            var andGate = LogicElementFactory.AndGate();
             andGate.AddInput(notGate);
             andGate.AddInput(orGate);
 
@@ -25,22 +25,22 @@ namespace LogicGateTests
         [Fact]
         public void MediumCompositeCircut()
         {
-            var notGate1 = LogicGateFactory.NotGate();
-            notGate1.AddInput(Generator.AnInactiveSignal());
+            var notGate1 = LogicElementFactory.NotGate();
+            notGate1.SetInput(LogicElementFactory.InactiveGenerator());
 
-            var notGate2 = LogicGateFactory.NotGate();
-            notGate2.AddInput(Generator.AnActiveSignal());
+            var notGate2 = LogicElementFactory.NotGate();
+            notGate2.SetInput(LogicElementFactory.ActiveGenerator());
 
-            var andGate = LogicGateFactory.AndGate();
+            var andGate = LogicElementFactory.AndGate();
             andGate.AddInput(notGate1);
             andGate.AddInput(notGate2);
 
-            var notGate3 = LogicGateFactory.NotGate();
-            notGate3.AddInput(andGate);
+            var notGate3 = LogicElementFactory.NotGate();
+            notGate3.SetInput(andGate);
 
-            var orGate = LogicGateFactory.OrGate();
+            var orGate = LogicElementFactory.OrGate();
             orGate.AddInput(notGate3);
-            orGate.AddInput(Generator.AnInactiveSignal());
+            orGate.AddInput(LogicElementFactory.InactiveGenerator());
 
             Assert.True(orGate.Output());
         }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace LogicGates.Abstractions
 {
-    public class LogicGate : IOutput, IHaveInputs
+    public class LogicGate : IOutput, IReceiveInputs
     {
         private List<IOutput> Inputs { get; }
         private Func<IEnumerable<IOutput>, bool> Logic { get; }

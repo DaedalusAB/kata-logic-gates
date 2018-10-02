@@ -4,16 +4,14 @@ namespace LogicGates
 {
     public class Generator : IOutput
     {
-        public static Generator AnActiveSignal() => new Generator(true);
-        public static Generator AnInactiveSignal() => new Generator(false);
-
-        private readonly bool _value;
+        private bool Value { get; }
 
         public Generator(bool value)
         {
-            _value = value;
+            Value = value;
         }
 
-        public bool Output() => _value;
+        public bool Output() =>
+            Value;
     }
 }

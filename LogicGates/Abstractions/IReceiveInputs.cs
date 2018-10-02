@@ -1,6 +1,6 @@
 ﻿namespace LogicGates.Abstractions
 {
-    public interface IHaveInputs
+    public interface IReceiveInputs
     {
         void AddInput(IOutput input);
     }

@@ -9,8 +9,8 @@ namespace LogicGateTests
         [Fact]
         public void Zero_Negated_Is_One()
         {
-            var notGate = LogicGateFactory.NotGate();
-            notGate.AddInput(Generator.AnInactiveSignal());
+            var notGate = LogicElementFactory.NotGate();
+            notGate.SetInput(LogicElementFactory.InactiveGenerator());
 
             Assert.True(notGate.Output());
         }
@@ -19,8 +19,8 @@ namespace LogicGateTests
         public void One_Negated_Is_Zero()
         {
 
-            var notGate = LogicGateFactory.NotGate();
-            notGate.AddInput(Generator.AnActiveSignal());
+            var notGate = LogicElementFactory.NotGate();
+            notGate.SetInput(LogicElementFactory.ActiveGenerator());
 
             Assert.False(notGate.Output());
         }
