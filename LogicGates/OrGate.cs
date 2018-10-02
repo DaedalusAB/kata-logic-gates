@@ -5,7 +5,7 @@ namespace LogicGates
 {
     public class OrGate : LogicGate
     {
-        public OrGate(IEnumerable<IConnectable> inputs, Signal output) : base(inputs, output)
+        public OrGate(Signal output) : base(output)
         {
         }
 

@@ -21,7 +21,10 @@ namespace LogicGateTests.Builders
 
         public NotGate Build()
         {
-            return new NotGate(_input, _output);
+            var gate = new NotGate(_output);
+            gate.AddInput(_input);
+
+            return gate;
         }
     }
 }

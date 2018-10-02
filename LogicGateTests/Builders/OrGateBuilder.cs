@@ -21,7 +21,13 @@ namespace LogicGateTests.Builders
 
         public OrGate Build()
         {
-            return new OrGate(_inputs, _output);
+            var gate = new OrGate(_output);
+            foreach (var input in _inputs)
+            {
+                gate.AddInput(input);
+            }
+
+            return gate;
         }
     }
 }

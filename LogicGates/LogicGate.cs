@@ -3,17 +3,21 @@ using System.Linq;
 
 namespace LogicGates
 {
-    public abstract class LogicGate
+    public abstract class LogicGate : IConnectable
     {
         protected Signal Output { get; }
         protected List<IConnectable> Inputs { get; }
 
-        protected LogicGate(IEnumerable<IConnectable> inputs, Signal output)
+        protected LogicGate(Signal output)
         {
             Output = output;
-            Inputs = inputs.ToList();
+            Inputs = new List<IConnectable>();
         }
+
         public abstract void Emit();
+
+        public void AddInput(IConnectable input) =>
+            Inputs.Add(input);
 
         public bool State() =>
             Output.State();

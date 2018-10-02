@@ -4,7 +4,7 @@ namespace LogicGates
 {
     public class NotGate : LogicGate
     {
-        public NotGate(IConnectable input, Signal output) : base(new[] { input }, output)
+        public NotGate(Signal output) : base(output)
         {
         }
 

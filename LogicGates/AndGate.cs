@@ -5,7 +5,7 @@ namespace LogicGates
 {
     public class AndGate : LogicGate
     {
-        public AndGate(IEnumerable<IConnectable> inputs, Signal output) : base(inputs, output)
+        public AndGate(Signal output) : base(output)
         {
         }
 

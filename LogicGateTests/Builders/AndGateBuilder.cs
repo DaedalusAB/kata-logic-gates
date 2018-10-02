@@ -21,7 +21,13 @@ namespace LogicGateTests.Builders
 
         public AndGate Build()
         {
-            return new AndGate(_inputs, _output);
+            var gate = new AndGate(_output);
+            foreach (var input in _inputs)
+            {
+                gate.AddInput(input);
+            }
+
+            return gate;
         }
     }
 }
