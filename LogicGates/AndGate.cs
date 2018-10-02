@@ -6,6 +6,6 @@ namespace LogicGates
     public class AndGate : LogicGate
     {
         public override bool Output() =>
-            Inputs.All(signal => signal.Output());
+            Inputs.All(input => input.Output());
     }
 }
