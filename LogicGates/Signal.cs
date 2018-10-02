@@ -16,6 +16,6 @@ namespace LogicGates
 
         public void SetState(bool state) => _value = state;
 
-        public bool OutputValue() => _value;
+        public bool Output() => _value;
     }
 }

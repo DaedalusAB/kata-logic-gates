@@ -19,7 +19,7 @@ namespace LogicGateTests
                 })
                 .Build();
 
-            Assert.False(andGate.OutputValue());
+            Assert.False(andGate.Output());
         }
 
         [Fact]
@@ -33,7 +33,7 @@ namespace LogicGateTests
                 })
                 .Build();
 
-            Assert.False(andGate.OutputValue());
+            Assert.False(andGate.Output());
         }
 
         [Fact]
@@ -47,7 +47,7 @@ namespace LogicGateTests
                 })
                 .Build();
 
-            Assert.True(andGate.OutputValue());
+            Assert.True(andGate.Output());
         }
     }
 }

@@ -5,7 +5,7 @@ namespace LogicGates
 {
     public class OrGate : LogicGate
     {
-        public override bool OutputValue() =>
-            Inputs.Any(signal => signal.OutputValue());
+        public override bool Output() =>
+            Inputs.Any(signal => signal.Output());
     }
 }

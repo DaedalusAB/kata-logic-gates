@@ -14,6 +14,6 @@ namespace LogicGates.Abstractions
         public void AddInput(IHaveOutput input) =>
             Inputs.Add(input);
 
-        public abstract bool OutputValue();
+        public abstract bool Output();
     }
 }
