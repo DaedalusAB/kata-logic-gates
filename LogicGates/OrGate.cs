@@ -6,10 +6,10 @@ namespace LogicGates
 {
     public class OrGate : LogicGate
     {
-        public override bool State()
+        public override bool OutputValue()
         {
-            Output.SetState(Inputs.Any(signal => signal.State()));
-            return Output.State();
+            Output.SetState(Inputs.Any(signal => signal.OutputValue()));
+            return Output.OutputValue();
         }
     }
 }

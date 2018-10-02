@@ -2,7 +2,7 @@
 
 namespace LogicGates
 {
-    public class Signal : IOutputState
+    public class Signal : IHaveOutput
     {
         public static Signal AnActiveSignal() => new Signal(true);
         public static Signal AnInactiveSignal() => new Signal(false);
@@ -16,6 +16,6 @@ namespace LogicGates
 
         public void SetState(bool state) => _value = state;
 
-        public bool State() => _value;
+        public bool OutputValue() => _value;
     }
 }

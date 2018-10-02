@@ -17,7 +17,7 @@ namespace LogicGateTests
                 )
                 .Build();
 
-            Assert.True(notGate.State());
+            Assert.True(notGate.OutputValue());
         }
 
         [Fact]
@@ -29,7 +29,7 @@ namespace LogicGateTests
                 )
                 .Build();
 
-            Assert.False(notGate.State());
+            Assert.False(notGate.OutputValue());
         }
     }
 }

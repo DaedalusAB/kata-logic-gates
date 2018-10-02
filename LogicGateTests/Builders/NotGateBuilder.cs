@@ -5,9 +5,9 @@ namespace LogicGateTests.Builders
 {
     internal class NotGateBuilder
     {
-        private IOutputState _input;
+        private IHaveOutput _input;
 
-        public NotGateBuilder WithInput(IOutputState input)
+        public NotGateBuilder WithInput(IHaveOutput input)
         {
             _input = input;
             return this;

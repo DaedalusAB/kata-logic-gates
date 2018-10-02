@@ -2,6 +2,6 @@
 {
     public interface IHaveInputs
     {
-        void AddInput(IOutputState input);
+        void AddInput(IHaveOutput input);
     }
 }

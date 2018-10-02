@@ -2,20 +2,20 @@
 
 namespace LogicGates.Abstractions
 {
-    public abstract class LogicGate : IOutputState, IHaveInputs
+    public abstract class LogicGate : IHaveOutput, IHaveInputs
     {
         protected Signal Output { get; }
-        protected List<IOutputState> Inputs { get; set; }
+        protected List<IHaveOutput> Inputs { get; set; }
 
         protected LogicGate()
         {
             Output = new Signal();
-            Inputs = new List<IOutputState>();
+            Inputs = new List<IHaveOutput>();
         }
 
-        public void AddInput(IOutputState input) =>
+        public void AddInput(IHaveOutput input) =>
             Inputs.Add(input);
 
-        public abstract bool State();
+        public abstract bool OutputValue();
     }
 }

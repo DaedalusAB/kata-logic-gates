@@ -6,15 +6,15 @@ namespace LogicGates
 {
     public class NotGate : LogicGate
     {
-        public override bool State()
+        public override bool OutputValue()
         {
-            Output.SetState(!Inputs.First().State());
-            return Output.State();
+            Output.SetState(!Inputs.First().OutputValue());
+            return Output.OutputValue();
         }
 
-        public new void AddInput(IOutputState input)
+        public new void AddInput(IHaveOutput input)
         {
-            Inputs = new List<IOutputState>() { input };
+            Inputs = new List<IHaveOutput>() { input };
         }
     }
 }
