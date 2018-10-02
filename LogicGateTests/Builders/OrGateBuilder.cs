@@ -1,14 +1,23 @@
-﻿using LogicGates;
+﻿using System.Collections.Generic;
+using System.Linq;
+using LogicGates;
+using LogicGates.Abstractions;
 
 namespace LogicGateTests.Builders
 {
     internal class OrGateBuilder
     {
-        private IStateful[] _inputs;
+        private readonly List<IStateful> _inputs = new List<IStateful>();
 
-        public OrGateBuilder WithInputs(IStateful[] inputs)
+        public OrGateBuilder WithInputs(IEnumerable<IStateful> inputs)
         {
-            _inputs = inputs;
+            _inputs.AddRange(inputs.ToList());
+            return this;
+        }
+
+        public OrGateBuilder WithInput(IStateful input)
+        {
+            _inputs.Add(input);
             return this;
         }
 

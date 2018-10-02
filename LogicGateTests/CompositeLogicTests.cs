@@ -35,5 +35,33 @@ namespace LogicGateTests
 
             Assert.True(andGate.State());
         }
+
+        [Fact]
+        public void MediumCompositeCircut()
+        {
+            var notGate1 = NotGateBuilder
+                .WithInput(new Signal(false))
+                .Build();
+
+            var notGate2 = NotGateBuilder
+                .WithInput(new Signal(true))
+                .Build();
+
+            var andGate = AndGateBuilder
+                .WithInput(notGate1)
+                .WithInput(notGate2)
+                .Build();
+
+            var notGate3 = NotGateBuilder
+                .WithInput(andGate)
+                .Build();
+
+            var orGate = OrGateBuilder
+                .WithInput(new Signal(false))
+                .WithInput(notGate3)
+                .Build();
+
+            Assert.True(orGate.State());
+        }
     }
 }

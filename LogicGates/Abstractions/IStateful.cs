@@ -1,4 +1,4 @@
-﻿namespace LogicGates
+﻿namespace LogicGates.Abstractions
 {
     public interface IStateful
     {

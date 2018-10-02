@@ -1,4 +1,6 @@
-﻿namespace LogicGates
+﻿using LogicGates.Abstractions;
+
+namespace LogicGates
 {
     public class Signal : IStateful, IOutputState
     {
