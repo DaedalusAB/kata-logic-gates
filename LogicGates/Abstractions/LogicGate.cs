@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using LogicGates.Abstractions;
 
-namespace LogicGates
+namespace LogicGates.Abstractions
 {
     public abstract class LogicGate : IOutputState, IHaveInputs
     {
