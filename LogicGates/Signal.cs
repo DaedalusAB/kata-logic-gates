@@ -1,6 +1,6 @@
 ﻿namespace LogicGates
 {
-    public class Signal : IStateful
+    public class Signal : IStateful, IOutputState
     {
         private bool _value;
 
@@ -9,8 +9,11 @@
             _value = value;
         }
 
+        public void SetState(bool state) => _value = state;
+
         public bool State() => _value;
 
-        public void SetState(bool state) => _value = state;
+        public IStateful GetOutput() =>
+            this;
     }
 }
