@@ -9,7 +9,7 @@ namespace LogicGateTests
         private readonly OrGateBuilder OrGateBuilder = new OrGateBuilder();
 
         [Fact]
-        public void Zero_And_Zero_Is_Zero()
+        public void Zero_Or_Zero_Is_Zero()
         {
             var orGate = OrGateBuilder
                 .WithInput(Signal.AnInactiveSignal())
@@ -20,7 +20,7 @@ namespace LogicGateTests
         }
 
         [Fact]
-        public void Zero_And_One_Is_One()
+        public void Zero_Or_One_Is_One()
         {
             var orGate = OrGateBuilder
                 .WithInput(Signal.AnInactiveSignal())
@@ -31,7 +31,7 @@ namespace LogicGateTests
         }
 
         [Fact]
-        public void One_And_One_Is_One()
+        public void One_Or_One_Is_One()
         {
             var orGate = OrGateBuilder
                 .WithInput(Signal.AnActiveSignal())
