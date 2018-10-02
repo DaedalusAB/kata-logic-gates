@@ -3,7 +3,7 @@ using LogicGates.Abstractions;
 
 namespace LogicGates
 {
-    public abstract class LogicGate : IStateful, IOutputState, IHaveInputs
+    public abstract class LogicGate : IStateful, IHaveInputs
     {
         protected Signal Output { get; }
         protected List<IStateful> Inputs { get; set; }
@@ -18,8 +18,5 @@ namespace LogicGates
             Inputs.Add(input);
 
         public abstract bool State();
-
-        public IStateful GetOutput() =>
-            this;
     }
 }

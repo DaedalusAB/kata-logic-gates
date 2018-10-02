@@ -26,12 +26,27 @@ namespace LogicGateTests
                 .Build();
 
             var andGate = AndGateBuilder
-                .WithInputs(new[]
-                {
-                    notGate.GetOutput(),
-                    orGate.GetOutput()
-                })
+                .WithInput(notGate)
+                .WithInput(orGate)
                 .Build();
+
+            Assert.True(andGate.State());
+        }
+
+        [Fact]
+        //  can be removed; just trying out stuff
+        public void BasicComposite_NoBuilders()
+        {
+            var notGate = new NotGate();
+            notGate.AddInput(new Signal(false));
+
+            var orGate = new OrGate();
+            orGate.AddInput(new Signal(false));
+            orGate.AddInput(new Signal(true));
+
+            var andGate = new AndGate();
+            andGate.AddInput(notGate);
+            andGate.AddInput(orGate);
 
             Assert.True(andGate.State());
         }
