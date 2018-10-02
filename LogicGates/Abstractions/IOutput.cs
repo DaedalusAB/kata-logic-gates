@@ -1,6 +1,6 @@
 ﻿namespace LogicGates.Abstractions
 {
-    public interface IHaveOutput
+    public interface IOutput
     {
         bool Output();
     }

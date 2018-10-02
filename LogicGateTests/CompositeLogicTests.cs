@@ -1,47 +1,21 @@
 ﻿using LogicGates;
-using LogicGateTests.Builders;
 using Xunit;
 
 namespace LogicGateTests
 {
     public class CompositeLogicTests
     {
-        private readonly AndGateBuilder AndGateBuilder = new AndGateBuilder();
-        private readonly NotGateBuilder NotGateBuilder = new NotGateBuilder();
-        private readonly OrGateBuilder OrGateBuilder = new OrGateBuilder();
-
         [Fact]
         public void BasicCompositeCircuit()
         {
-            var notGate = NotGateBuilder
-                .WithInput(Signal.AnInactiveSignal())
-                .Build();
+            var notGate = LogicGateFactory.NotGate();
+            notGate.AddInput(Generator.AnInactiveSignal());
 
-            var orGate = OrGateBuilder
-                .WithInput(Signal.AnInactiveSignal())
-                .WithInput(Signal.AnActiveSignal())
-                .Build();
+            var orGate = LogicGateFactory.OrGate();
+            orGate.AddInput(Generator.AnInactiveSignal());
+            orGate.AddInput(Generator.AnActiveSignal());
 
-            var andGate = AndGateBuilder
-                .WithInput(notGate)
-                .WithInput(orGate)
-                .Build();
-
-            Assert.True(andGate.Output());
-        }
-
-        [Fact]
-        //  can be removed; just trying out stuff
-        public void BasicComposite_NoBuilders()
-        {
-            var notGate = new NotGate();
-            notGate.AddInput(Signal.AnInactiveSignal());
-
-            var orGate = new OrGate();
-            orGate.AddInput(Signal.AnInactiveSignal());
-            orGate.AddInput(Signal.AnActiveSignal());
-
-            var andGate = new AndGate();
+            var andGate = LogicGateFactory.AndGate();
             andGate.AddInput(notGate);
             andGate.AddInput(orGate);
 
@@ -51,27 +25,22 @@ namespace LogicGateTests
         [Fact]
         public void MediumCompositeCircut()
         {
-            var notGate1 = NotGateBuilder
-                .WithInput(Signal.AnInactiveSignal())
-                .Build();
+            var notGate1 = LogicGateFactory.NotGate();
+            notGate1.AddInput(Generator.AnInactiveSignal());
 
-            var notGate2 = NotGateBuilder
-                .WithInput(Signal.AnActiveSignal())
-                .Build();
+            var notGate2 = LogicGateFactory.NotGate();
+            notGate2.AddInput(Generator.AnActiveSignal());
 
-            var andGate = AndGateBuilder
-                .WithInput(notGate1)
-                .WithInput(notGate2)
-                .Build();
+            var andGate = LogicGateFactory.AndGate();
+            andGate.AddInput(notGate1);
+            andGate.AddInput(notGate2);
 
-            var notGate3 = NotGateBuilder
-                .WithInput(andGate)
-                .Build();
+            var notGate3 = LogicGateFactory.NotGate();
+            notGate3.AddInput(andGate);
 
-            var orGate = OrGateBuilder
-                .WithInput(Signal.AnInactiveSignal())
-                .WithInput(notGate3)
-                .Build();
+            var orGate = LogicGateFactory.OrGate();
+            orGate.AddInput(notGate3);
+            orGate.AddInput(Generator.AnInactiveSignal());
 
             Assert.True(orGate.Output());
         }

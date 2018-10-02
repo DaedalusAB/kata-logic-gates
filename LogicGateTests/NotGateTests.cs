@@ -1,21 +1,16 @@
 ﻿using LogicGates;
-using LogicGateTests.Builders;
 using Xunit;
 
 namespace LogicGateTests
 {
     public class NotGateTests
     {
-        private readonly NotGateBuilder NotGateBuilder = new NotGateBuilder();
 
         [Fact]
         public void Zero_Negated_Is_One()
         {
-            var notGate = NotGateBuilder
-                .WithInput(
-                    Signal.AnInactiveSignal()
-                )
-                .Build();
+            var notGate = LogicGateFactory.NotGate();
+            notGate.AddInput(Generator.AnInactiveSignal());
 
             Assert.True(notGate.Output());
         }
@@ -23,11 +18,9 @@ namespace LogicGateTests
         [Fact]
         public void One_Negated_Is_Zero()
         {
-            var notGate = NotGateBuilder
-                .WithInput(
-                    Signal.AnActiveSignal()
-                )
-                .Build();
+
+            var notGate = LogicGateFactory.NotGate();
+            notGate.AddInput(Generator.AnActiveSignal());
 
             Assert.False(notGate.Output());
         }
