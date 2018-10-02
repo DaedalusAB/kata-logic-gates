@@ -11,12 +11,10 @@ namespace LogicGateTests
         [Fact]
         public void Zero_Negated_Is_One()
         {
-            var output = new Signal();
             var notGate = NotGateBuilder
                 .WithInput(
                     new Signal(false)
                 )
-                .WithOutput(output)
                 .Build();
 
             Assert.True(notGate.State());
@@ -25,12 +23,10 @@ namespace LogicGateTests
         [Fact]
         public void One_Negated_Is_Zero()
         {
-            var output = new Signal();
             var notGate = NotGateBuilder
                 .WithInput(
                     new Signal(true)
                 )
-                .WithOutput(output)
                 .Build();
 
             Assert.False(notGate.State());

@@ -4,24 +4,17 @@ namespace LogicGateTests.Builders
 {
     internal class NotGateBuilder
     {
-        private Signal _input;
-        private Signal _output;
+        private IStateful _input;
 
-        public NotGateBuilder WithInput(Signal input)
+        public NotGateBuilder WithInput(IStateful input)
         {
             _input = input;
             return this;
         }
 
-        public NotGateBuilder WithOutput(Signal output)
-        {
-            _output = output;
-            return this;
-        }
-
         public NotGate Build()
         {
-            var gate = new NotGate(_output);
+            var gate = new NotGate();
             gate.AddInput(_input);
 
             return gate;

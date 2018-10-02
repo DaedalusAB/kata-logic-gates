@@ -1,6 +1,6 @@
 ﻿namespace LogicGates
 {
-    public interface IConnectable
+    public interface IStateful
     {
         bool State();
     }

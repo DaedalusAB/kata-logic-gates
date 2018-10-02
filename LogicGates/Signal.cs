@@ -1,6 +1,6 @@
 ﻿namespace LogicGates
 {
-    public class Signal : IConnectable
+    public class Signal : IStateful
     {
         private bool _value;
 
