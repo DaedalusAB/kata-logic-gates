@@ -1,14 +1,11 @@
-﻿using System.Linq;
-using LogicGates.Abstractions;
+﻿using LogicGates.Abstractions;
+using System.Linq;
 
 namespace LogicGates
 {
     public class AndGate : LogicGate
     {
-        public override bool OutputValue()
-        {
-            Output.SetState(Inputs.All(signal => signal.OutputValue()));
-            return Output.OutputValue();
-        }
+        public override bool OutputValue() =>
+            Inputs.All(signal => signal.OutputValue());
     }
 }
