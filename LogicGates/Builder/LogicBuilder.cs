@@ -4,37 +4,37 @@
     {
         private IOutput _logicElement;
         
-        public IAddInputs AnAndGate()
+        public IAddInputs AndGate()
         {
             _logicElement = LogicElementFactory.AndGate();
             return this;
         }
 
-        public IAddInputs AnOrGate()
+        public IAddInputs OrGate()
         {
             _logicElement = LogicElementFactory.OrGate();
             return this;
         }
 
-        public IAddInputs AnXorGate()
+        public IAddInputs XorGate()
         {
             _logicElement = LogicElementFactory.XorGate();
             return this;
         }
 
-        public ISetAnInput ANotGate()
+        public ISetAnInput NotGate()
         {
             _logicElement = LogicElementFactory.NotGate();
             return this;
         }
 
-        public IBuildGates AnActiveGenerator()
+        public IBuildGates ActiveGenerator()
         {
             _logicElement = LogicElementFactory.ActiveGenerator();
             return this;
         }
 
-        public IBuildGates AnInactiveGenerator()
+        public IBuildGates InactiveGenerator()
         {
             _logicElement = LogicElementFactory.InactiveGenerator();
             return this;

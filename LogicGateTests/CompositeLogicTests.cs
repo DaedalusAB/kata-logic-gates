@@ -12,18 +12,18 @@ namespace LogicGateTests
         public void BasicCompositeCircut_WithBuilder()
         {
             var logic = LogicBuilder
-                .AnAndGate()
+                .AndGate()
                 .AddInput(
                     LogicBuilder
-                        .AnOrGate()
-                        .AddInput(LogicBuilder.AnActiveGenerator().Build())
-                        .AddInput(LogicBuilder.AnInactiveGenerator().Build())
+                        .OrGate()
+                        .AddInput(LogicBuilder.ActiveGenerator().Build())
+                        .AddInput(LogicBuilder.InactiveGenerator().Build())
                         .Build()
                 )
                 .AddInput(
                     LogicBuilder
-                        .ANotGate()
-                        .SetInput(LogicBuilder.AnInactiveGenerator().Build())
+                        .NotGate()
+                        .SetInput(LogicBuilder.InactiveGenerator().Build())
                         .Build())
                 .Build();
 
