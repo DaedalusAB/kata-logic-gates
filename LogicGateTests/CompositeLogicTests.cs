@@ -1,10 +1,35 @@
 ﻿using LogicGates;
+using LogicGates.Builder;
 using Xunit;
 
 namespace LogicGateTests
 {
     public class CompositeLogicTests
     {
+        private LogicBuilder LogicBuilder => new LogicBuilder();
+
+        [Fact]
+        public void BasicCompositeCircut_WithBuilder()
+        {
+            var logic = LogicBuilder
+                .AnAndGate()
+                .AddInput(
+                    LogicBuilder
+                        .AnOrGate()
+                        .AddInput(LogicBuilder.AnActiveGenerator().Build())
+                        .AddInput(LogicBuilder.AnInactiveGenerator().Build())
+                        .Build()
+                )
+                .AddInput(
+                    LogicBuilder
+                        .ANotGate()
+                        .SetInput(LogicBuilder.AnInactiveGenerator().Build())
+                        .Build())
+                .Build();
+
+            Assert.True(logic.Output);
+        }
+
         [Fact]
         public void BasicCompositeCircuit()
         {
