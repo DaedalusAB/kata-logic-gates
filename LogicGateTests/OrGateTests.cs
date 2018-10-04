@@ -12,7 +12,7 @@ namespace LogicGateTests
             orGate.AddInput(LogicElementFactory.InactiveGenerator());
             orGate.AddInput(LogicElementFactory.InactiveGenerator());
 
-            Assert.False(orGate.Output());
+            Assert.False(orGate.Output);
         }
 
         [Fact]
@@ -22,7 +22,7 @@ namespace LogicGateTests
             orGate.AddInput(LogicElementFactory.InactiveGenerator());
             orGate.AddInput(LogicElementFactory.ActiveGenerator());
 
-            Assert.True(orGate.Output());
+            Assert.True(orGate.Output);
         }
 
         [Fact]
@@ -33,7 +33,7 @@ namespace LogicGateTests
             orGate.AddInput(LogicElementFactory.ActiveGenerator());
             orGate.AddInput(LogicElementFactory.ActiveGenerator());
 
-            Assert.True(orGate.Output());
+            Assert.True(orGate.Output);
         }
     }
 }

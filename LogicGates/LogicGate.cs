@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace LogicGates.Abstractions
+namespace LogicGates
 {
-    public class LogicGate : IOutput, IReceiveInputs
+    public class LogicGate : IOutput
     {
         private List<IOutput> Inputs { get; }
         private Func<IEnumerable<IOutput>, bool> Logic { get; }
@@ -17,7 +17,7 @@ namespace LogicGates.Abstractions
         public void AddInput(IOutput input) =>
             Inputs.Add(input);
 
-        public bool Output() =>
+        public bool Output =>
             Logic(Inputs);
     }
 }

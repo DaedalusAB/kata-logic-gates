@@ -5,7 +5,6 @@ namespace LogicGateTests
 {
     public class AndGateTests
     {
-
         [Fact]
         public void Zero_And_Zero_Is_Zero()
         {
@@ -13,7 +12,7 @@ namespace LogicGateTests
             andGate.AddInput(LogicElementFactory.InactiveGenerator());
             andGate.AddInput(LogicElementFactory.InactiveGenerator());
 
-            Assert.False(andGate.Output());
+            Assert.False(andGate.Output);
         }
 
         [Fact]
@@ -23,7 +22,7 @@ namespace LogicGateTests
             andGate.AddInput(LogicElementFactory.ActiveGenerator());
             andGate.AddInput(LogicElementFactory.InactiveGenerator());
 
-            Assert.False(andGate.Output());
+            Assert.False(andGate.Output);
         }
 
         [Fact]
@@ -34,7 +33,7 @@ namespace LogicGateTests
             andGate.AddInput(LogicElementFactory.ActiveGenerator());
             andGate.AddInput(LogicElementFactory.ActiveGenerator());
 
-            Assert.True(andGate.Output());
+            Assert.True(andGate.Output);
         }
     }
 }

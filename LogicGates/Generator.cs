@@ -1,17 +1,14 @@
-﻿using LogicGates.Abstractions;
+﻿using LogicGates;
 
 namespace LogicGates
 {
     public class Generator : IOutput
     {
-        private bool Value { get; }
-
         public Generator(bool value)
         {
-            Value = value;
+            Output = value;
         }
 
-        public bool Output() =>
-            Value;
+        public bool Output { get; }
     }
 }

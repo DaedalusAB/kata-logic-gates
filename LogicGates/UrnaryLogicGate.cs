@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using LogicGates.Abstractions;
+using LogicGates;
 
 namespace LogicGates
 {
-    public class UrnaryLogicGate: IReceiveAnInput, IOutput
+    public class UrnaryLogicGate: IOutput
     {
         private IOutput Input { get; set; }
         private Func<IOutput, bool> Logic { get; }
@@ -18,7 +18,7 @@ namespace LogicGates
         public void SetInput(IOutput input) =>
             Input = input;
 
-        public bool Output() =>
+        public bool Output =>
             Logic(Input);
     }
 }
