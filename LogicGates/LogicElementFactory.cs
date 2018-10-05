@@ -1,5 +1,4 @@
-﻿using LogicGates;
-using System.Linq;
+﻿using System.Linq;
 
 namespace LogicGates
 {

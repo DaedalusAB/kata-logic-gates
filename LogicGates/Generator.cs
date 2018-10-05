@@ -1,6 +1,4 @@
-﻿using LogicGates;
-
-namespace LogicGates
+﻿namespace LogicGates
 {
     public class Generator : IOutput
     {

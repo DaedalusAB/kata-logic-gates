@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using LogicGates;
 
 namespace LogicGates
 {
-    public class UrnaryLogicGate: IOutput
+    public class UrnaryLogicGate : IOutput
     {
         private IOutput Input { get; set; }
         private Func<IOutput, bool> Logic { get; }
