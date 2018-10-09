@@ -13,14 +13,14 @@ namespace LogicGateTests
         {
             var logic = LogicBuilder
                 .AndGate()
-                .AddInput(
+                .AddFirstInput(
                     LogicBuilder
                         .OrGate()
-                        .AddInput(LogicBuilder.ActiveGenerator().Build())
-                        .AddInput(LogicBuilder.InactiveGenerator().Build())
+                        .AddFirstInput(LogicBuilder.ActiveGenerator().Build())
+                        .AddSecondInput(LogicBuilder.InactiveGenerator().Build())
                         .Build()
                 )
-                .AddInput(
+                .AddSecondInput(
                     LogicBuilder
                         .NotGate()
                         .SetInput(LogicBuilder.InactiveGenerator().Build())

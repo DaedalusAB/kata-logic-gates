@@ -1,22 +1,22 @@
 ﻿namespace LogicGates.Builder
 {
-    public class LogicBuilder : IAddInputs, ISetAnInput, IBuildGates
+    public class LogicBuilder : IMustAddFirstInput, IMustAddSecondInput, ICanAddInput, ISetAnInput, IBuildGates
     {
         private IOutput _logicElement;
         
-        public IAddInputs AndGate()
+        public IMustAddFirstInput AndGate()
         {
             _logicElement = LogicElementFactory.AndGate();
             return this;
         }
 
-        public IAddInputs OrGate()
+        public IMustAddFirstInput OrGate()
         {
             _logicElement = LogicElementFactory.OrGate();
             return this;
         }
 
-        public IAddInputs XorGate()
+        public IMustAddFirstInput XorGate()
         {
             _logicElement = LogicElementFactory.XorGate();
             return this;
@@ -40,7 +40,19 @@
             return this;
         }
 
-        public IAddInputs AddInput(IOutput input)
+        public IMustAddSecondInput AddFirstInput(IOutput input)
+        {
+            ((LogicGate)_logicElement).AddInput(input);
+            return this;
+        }
+
+        public ICanAddInput AddSecondInput(IOutput input)
+        {
+            ((LogicGate)_logicElement).AddInput(input);
+            return this;
+        }
+
+        public ICanAddInput AddInput(IOutput input)
         {
             ((LogicGate)_logicElement).AddInput(input);
             return this;
