@@ -2,7 +2,7 @@
 
 namespace LogicGates
 {
-    public class LogicElementFactory
+    public static class LogicElementFactory
     {
         public static LogicGate AndGate() =>
             new LogicGate(inputs => inputs.All(input => input.Output));

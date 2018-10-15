@@ -1,6 +1,6 @@
 ﻿namespace LogicGates.Builder
 {
-    public class LogicBuilder : IMustAddFirstInput, IMustAddSecondInput, ICanAddInput, ISetAnInput, IBuildGates
+    public class LogicBuilder : IMustAddFirstInput, IMustAddSecondInput, ICanAddInput, ISetAnInput
     {
         private IOutput _logicElement;
         
