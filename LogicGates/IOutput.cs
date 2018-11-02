@@ -2,6 +2,6 @@
 {
     public interface IOutput
     {
-        bool Output { get; }
+        bool Output();
     }
 }

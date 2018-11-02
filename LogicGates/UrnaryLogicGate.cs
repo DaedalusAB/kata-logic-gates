@@ -15,7 +15,7 @@ namespace LogicGates
         public void SetInput(IOutput input) =>
             Input = input;
 
-        public bool Output =>
+        public bool Output() =>
             Logic(Input);
     }
 }

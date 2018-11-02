@@ -27,7 +27,7 @@ namespace LogicGateTests
                         .Build())
                 .Build();
 
-            Assert.True(logic.Output);
+            Assert.True(logic.Output());
         }
 
         [Fact]
@@ -44,7 +44,7 @@ namespace LogicGateTests
             andGate.AddInput(notGate);
             andGate.AddInput(orGate);
 
-            Assert.True(andGate.Output);
+            Assert.True(andGate.Output());
         }
 
         [Fact]
@@ -67,7 +67,7 @@ namespace LogicGateTests
             orGate.AddInput(notGate3);
             orGate.AddInput(LogicElementFactory.InactiveGenerator());
 
-            Assert.True(orGate.Output);
+            Assert.True(orGate.Output());
         }
     }
 }

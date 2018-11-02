@@ -2,11 +2,14 @@
 {
     public class Generator : IOutput
     {
+        private readonly bool _value;
+
         public Generator(bool value)
         {
-            Output = value;
+            _value = value;
         }
 
-        public bool Output { get; }
+        public bool Output() =>
+            _value;
     }
 }

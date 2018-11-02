@@ -12,7 +12,7 @@ namespace LogicGateTests
             var notGate = LogicElementFactory.NotGate();
             notGate.SetInput(LogicElementFactory.InactiveGenerator());
 
-            Assert.True(notGate.Output);
+            Assert.True(notGate.Output());
         }
 
         [Fact]
@@ -22,7 +22,7 @@ namespace LogicGateTests
             var notGate = LogicElementFactory.NotGate();
             notGate.SetInput(LogicElementFactory.ActiveGenerator());
 
-            Assert.False(notGate.Output);
+            Assert.False(notGate.Output());
         }
     }
 }

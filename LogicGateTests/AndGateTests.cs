@@ -12,7 +12,7 @@ namespace LogicGateTests
             andGate.AddInput(LogicElementFactory.InactiveGenerator());
             andGate.AddInput(LogicElementFactory.InactiveGenerator());
 
-            Assert.False(andGate.Output);
+            Assert.False(andGate.Output());
         }
 
         [Fact]
@@ -22,7 +22,7 @@ namespace LogicGateTests
             andGate.AddInput(LogicElementFactory.ActiveGenerator());
             andGate.AddInput(LogicElementFactory.InactiveGenerator());
 
-            Assert.False(andGate.Output);
+            Assert.False(andGate.Output());
         }
 
         [Fact]
@@ -33,7 +33,7 @@ namespace LogicGateTests
             andGate.AddInput(LogicElementFactory.ActiveGenerator());
             andGate.AddInput(LogicElementFactory.ActiveGenerator());
 
-            Assert.True(andGate.Output);
+            Assert.True(andGate.Output());
         }
     }
 }

@@ -17,7 +17,7 @@ namespace LogicGates
         public void AddInput(IOutput input) =>
             Inputs.Add(input);
 
-        public bool Output =>
+        public bool Output() =>
             Logic(Inputs);
     }
 }
