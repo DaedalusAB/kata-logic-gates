@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace LogicGates
+namespace LogicGates.Factory
 {
     public static class LogicElementFactory
     {

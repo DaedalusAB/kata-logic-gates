@@ -1,4 +1,6 @@
-﻿namespace LogicGates.Builder
+﻿using LogicGates.Factory;
+
+namespace LogicGates.Builder
 {
     public class LogicBuilder : IMustAddFirstInput, IMustAddSecondInput, ICanAddInput, ISetAnInput
     {

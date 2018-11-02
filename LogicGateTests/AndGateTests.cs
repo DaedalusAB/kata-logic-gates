@@ -1,4 +1,4 @@
-using LogicGates;
+using LogicGates.Factory;
 using Xunit;
 
 namespace LogicGateTests

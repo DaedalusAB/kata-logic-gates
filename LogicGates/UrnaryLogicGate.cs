@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LogicGates
+namespace LogicGates.Factory
 {
     public class UrnaryLogicGate : IOutput
     {

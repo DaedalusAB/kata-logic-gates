@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace LogicGates
+namespace LogicGates.Factory
 {
     public class LogicGate : IOutput
     {

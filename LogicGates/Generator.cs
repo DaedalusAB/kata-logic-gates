@@ -1,4 +1,4 @@
-﻿namespace LogicGates
+﻿namespace LogicGates.Factory
 {
     public class Generator : IOutput
     {
