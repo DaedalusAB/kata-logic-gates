@@ -1,5 +1,5 @@
 ﻿using LogicGates;
-using LogicGateTests.Builders;
+using LogicGates.Builders;
 using Xunit;
 
 namespace LogicGateTests

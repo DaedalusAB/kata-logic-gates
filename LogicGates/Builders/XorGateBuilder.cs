@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
-using LogicGates;
-using LogicGateTests.Builders;
 
-namespace LogicGateTests
+namespace LogicGates.Builders
 {
     public class XorGateBuilder
     {

@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-using LogicGates;
 
-namespace LogicGateTests.Builders
+namespace LogicGates.Builders
 {
-    internal class OrGateBuilder
+    public class OrGateBuilder
     {
         private readonly List<IHaveOutput> _inputs = new List<IHaveOutput>();
         

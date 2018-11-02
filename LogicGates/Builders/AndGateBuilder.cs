@@ -1,13 +1,11 @@
-﻿using LogicGates;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 
-namespace LogicGateTests.Builders
+namespace LogicGates.Builders
 {
-    internal class AndGateBuilder
+    public class AndGateBuilder
     {
         private readonly List<IHaveOutput> _inputs = new List<IHaveOutput>();
-        
+
         public AndGateBuilder WithInput(IHaveOutput input)
         {
             _inputs.Add(input);

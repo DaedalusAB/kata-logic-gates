@@ -1,8 +1,6 @@
-﻿using LogicGates;
-
-namespace LogicGateTests.Builders
+﻿namespace LogicGates.Builders
 {
-    internal class NotGateBuilder
+    public class NotGateBuilder
     {
         private IHaveOutput _input;
 
