@@ -1,4 +1,4 @@
-﻿namespace LogicGates.Abstractions
+﻿namespace LogicGates
 {
     public interface IHaveOutput
     {

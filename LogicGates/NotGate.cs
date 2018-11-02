@@ -1,5 +1,4 @@
-﻿using LogicGates.Abstractions;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace LogicGates

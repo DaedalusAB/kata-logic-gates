@@ -12,8 +12,8 @@ namespace LogicGateTests
         public void Zero_Or_Zero_Is_Zero()
         {
             var orGate = OrGateBuilder
-                .WithInput(Signal.AnInactiveSignal())
-                .WithInput(Signal.AnInactiveSignal())
+                .WithInput(Generator.AnInactiveSignal())
+                .WithInput(Generator.AnInactiveSignal())
                 .Build();
 
             Assert.False(orGate.Output());
@@ -23,8 +23,8 @@ namespace LogicGateTests
         public void Zero_Or_One_Is_One()
         {
             var orGate = OrGateBuilder
-                .WithInput(Signal.AnInactiveSignal())
-                .WithInput(Signal.AnActiveSignal())
+                .WithInput(Generator.AnInactiveSignal())
+                .WithInput(Generator.AnActiveSignal())
                 .Build();
 
             Assert.True(orGate.Output());
@@ -34,8 +34,8 @@ namespace LogicGateTests
         public void One_Or_One_Is_One()
         {
             var orGate = OrGateBuilder
-                .WithInput(Signal.AnActiveSignal())
-                .WithInput(Signal.AnActiveSignal())
+                .WithInput(Generator.AnActiveSignal())
+                .WithInput(Generator.AnActiveSignal())
                 .Build();
 
             Assert.True(orGate.Output());

@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using LogicGates;
-using LogicGates.Abstractions;
 
 namespace LogicGateTests.Builders
 {

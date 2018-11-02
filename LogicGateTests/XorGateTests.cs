@@ -11,8 +11,8 @@ namespace LogicGateTests
         public void Zero_Xor_Zero_Is_Zero()
         {
             var xorGate = XorGateBuilder
-                .WithInput(Signal.AnInactiveSignal())
-                .WithInput(Signal.AnInactiveSignal())
+                .WithInput(Generator.AnInactiveSignal())
+                .WithInput(Generator.AnInactiveSignal())
                 .Build();
 
             Assert.False(xorGate.Output());
@@ -23,9 +23,9 @@ namespace LogicGateTests
         {
 
             var xorGate = XorGateBuilder
-                .WithInput(Signal.AnInactiveSignal())
-                .WithInput(Signal.AnInactiveSignal())
-                .WithInput(Signal.AnActiveSignal())
+                .WithInput(Generator.AnInactiveSignal())
+                .WithInput(Generator.AnInactiveSignal())
+                .WithInput(Generator.AnActiveSignal())
                 .Build();
 
             Assert.True(xorGate.Output());
@@ -35,9 +35,9 @@ namespace LogicGateTests
         public void One_Xor_One_Xor_Zero_Is_Zero()
         {
             var xorGate = XorGateBuilder
-                .WithInput(Signal.AnActiveSignal())
-                .WithInput(Signal.AnActiveSignal())
-                .WithInput(Signal.AnInactiveSignal())
+                .WithInput(Generator.AnActiveSignal())
+                .WithInput(Generator.AnActiveSignal())
+                .WithInput(Generator.AnInactiveSignal())
                 .Build();
 
             Assert.False(xorGate.Output());

@@ -14,12 +14,12 @@ namespace LogicGateTests
         public void BasicCompositeCircuit()
         {
             var notGate = NotGateBuilder
-                .WithInput(Signal.AnInactiveSignal())
+                .WithInput(Generator.AnInactiveSignal())
                 .Build();
 
             var orGate = OrGateBuilder
-                .WithInput(Signal.AnInactiveSignal())
-                .WithInput(Signal.AnActiveSignal())
+                .WithInput(Generator.AnInactiveSignal())
+                .WithInput(Generator.AnActiveSignal())
                 .Build();
 
             var andGate = AndGateBuilder
@@ -35,11 +35,11 @@ namespace LogicGateTests
         public void BasicComposite_NoBuilders()
         {
             var notGate = new NotGate();
-            notGate.AddInput(Signal.AnInactiveSignal());
+            notGate.AddInput(Generator.AnInactiveSignal());
 
             var orGate = new OrGate();
-            orGate.AddInput(Signal.AnInactiveSignal());
-            orGate.AddInput(Signal.AnActiveSignal());
+            orGate.AddInput(Generator.AnInactiveSignal());
+            orGate.AddInput(Generator.AnActiveSignal());
 
             var andGate = new AndGate();
             andGate.AddInput(notGate);
@@ -52,11 +52,11 @@ namespace LogicGateTests
         public void MediumCompositeCircut()
         {
             var notGate1 = NotGateBuilder
-                .WithInput(Signal.AnInactiveSignal())
+                .WithInput(Generator.AnInactiveSignal())
                 .Build();
 
             var notGate2 = NotGateBuilder
-                .WithInput(Signal.AnActiveSignal())
+                .WithInput(Generator.AnActiveSignal())
                 .Build();
 
             var andGate = AndGateBuilder
@@ -69,7 +69,7 @@ namespace LogicGateTests
                 .Build();
 
             var orGate = OrGateBuilder
-                .WithInput(Signal.AnInactiveSignal())
+                .WithInput(Generator.AnInactiveSignal())
                 .WithInput(notGate3)
                 .Build();
 

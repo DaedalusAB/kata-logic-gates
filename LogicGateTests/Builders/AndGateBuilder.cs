@@ -1,5 +1,4 @@
 ﻿using LogicGates;
-using LogicGates.Abstractions;
 using System.Collections.Generic;
 using System.Linq;
 
