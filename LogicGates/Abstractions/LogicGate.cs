@@ -2,7 +2,7 @@
 
 namespace LogicGates.Abstractions
 {
-    public abstract class LogicGate : IHaveOutput, IHaveInputs
+    public abstract class LogicGate : IHaveOutput
     {
         protected List<IHaveOutput> Inputs { get; set; }
 
