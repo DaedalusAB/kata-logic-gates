@@ -3,12 +3,14 @@ using System.Linq;
 
 namespace LogicGates
 {
-    public class NotGate : LogicGate
+    public class NotGate : IHaveOutput
     {
-        public override bool Output() =>
-            !Inputs.First().Output();
+        private IHaveOutput Input { get; set; }
 
-        public new void AddInput(IHaveOutput input) =>
-            Inputs = new List<IHaveOutput>() { input };
+        public bool Output() =>
+            !Input.Output();
+
+        public void SetInput(IHaveOutput input) =>
+            Input = input;
     }
 }

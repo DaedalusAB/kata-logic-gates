@@ -13,7 +13,7 @@
         public NotGate Build()
         {
             var gate = new NotGate();
-            gate.AddInput(_input);
+            gate.SetInput(_input);
 
             return gate;
         }

@@ -35,7 +35,7 @@ namespace LogicGateTests
         public void BasicComposite_NoBuilders()
         {
             var notGate = new NotGate();
-            notGate.AddInput(Generator.AnInactiveSignal());
+            notGate.SetInput(Generator.AnInactiveSignal());
 
             var orGate = new OrGate();
             orGate.AddInput(Generator.AnInactiveSignal());
