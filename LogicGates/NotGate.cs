@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace LogicGates
+﻿namespace LogicGates
 {
     public class NotGate : IHaveOutput
     {
