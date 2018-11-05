@@ -5,7 +5,7 @@ namespace LogicGates.Builder
     public class LogicBuilder : IMustAddFirstInput, IMustAddSecondInput, ICanAddInput, ISetAnInput
     {
         private IOutput _logicElement;
-        
+
         public IMustAddFirstInput AndGate()
         {
             _logicElement = LogicElementFactory.AndGate();

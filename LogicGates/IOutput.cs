@@ -1,4 +1,4 @@
-﻿namespace LogicGates.Factory
+﻿namespace LogicGates
 {
     public interface IOutput
     {

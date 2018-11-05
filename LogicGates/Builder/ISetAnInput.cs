@@ -1,6 +1,4 @@
-﻿using LogicGates.Factory;
-
-namespace LogicGates.Builder
+﻿namespace LogicGates.Builder
 {
     public interface ISetAnInput : IBuildGates
     {
