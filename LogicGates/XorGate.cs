@@ -1,10 +1,11 @@
-﻿using System.Linq;
+﻿using LogicGates.Strategy;
 
 namespace LogicGates
 {
     public class XorGate : LogicGate
     {
-        public override bool Output() =>
-            Inputs.Count(input => input.Output()) % 2 == 1;
+        public XorGate() : base(new XorFunction())
+        {
+        }
     }
 }

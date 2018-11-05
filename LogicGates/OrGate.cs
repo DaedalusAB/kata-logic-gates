@@ -1,10 +1,11 @@
-﻿using System.Linq;
+﻿using LogicGates.Strategy;
 
 namespace LogicGates
 {
     public class OrGate : LogicGate
     {
-        public override bool Output() =>
-            Inputs.Any(input => input.Output());
+        public OrGate() : base(new OrFunction())
+        {
+        }
     }
 }

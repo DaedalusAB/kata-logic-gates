@@ -1,10 +1,11 @@
-﻿using System.Linq;
+﻿using LogicGates.Strategy;
 
 namespace LogicGates
 {
     public class AndGate : LogicGate
     {
-        public override bool Output() =>
-            Inputs.All(input => input.Output());
+        public AndGate() : base(new AndFunction())
+        {
+        }
     }
 }
