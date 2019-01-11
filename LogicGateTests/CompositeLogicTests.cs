@@ -6,24 +6,22 @@ namespace LogicGateTests
 {
     public class CompositeLogicTests
     {
-        private LogicBuilder LogicBuilder => new LogicBuilder();
-
         [Fact]
         public void BasicCompositeCircut_WithBuilder()
         {
-            var logic = LogicBuilder
+            var logic = new LogicBuilder()
                 .AndGate()
                 .AddFirstInput(
-                    LogicBuilder
+                    new LogicBuilder()
                         .OrGate()
-                        .AddFirstInput(LogicBuilder.ActiveGenerator().Build())
-                        .AddSecondInput(LogicBuilder.InactiveGenerator().Build())
+                        .AddFirstInput(new LogicBuilder().ActiveGenerator().Build())
+                        .AddSecondInput(new LogicBuilder().InactiveGenerator().Build())
                         .Build()
                 )
                 .AddSecondInput(
-                    LogicBuilder
+                    new LogicBuilder()
                         .NotGate()
-                        .SetInput(LogicBuilder.InactiveGenerator().Build())
+                        .SetInput(new LogicBuilder().InactiveGenerator().Build())
                         .Build())
                 .Build();
 
