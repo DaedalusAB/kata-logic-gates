@@ -1,4 +1,4 @@
-using LogicGates.Factory;
+using LogicGates;
 using Xunit;
 
 namespace LogicGateTests
@@ -8,9 +8,9 @@ namespace LogicGateTests
         [Fact]
         public void Zero_And_Zero_Is_Zero()
         {
-            var andGate = LogicElementFactory.AndGate();
-            andGate.AddInput(LogicElementFactory.InactiveGenerator());
-            andGate.AddInput(LogicElementFactory.InactiveGenerator());
+            var andGate = LogicGate.AndGate();
+            andGate.AddInput(Generator.InactiveGenerator());
+            andGate.AddInput(Generator.InactiveGenerator());
 
             Assert.False(andGate.Output());
         }
@@ -18,9 +18,9 @@ namespace LogicGateTests
         [Fact]
         public void Zero_And_One_Is_Zero()
         {
-            var andGate = LogicElementFactory.AndGate();
-            andGate.AddInput(LogicElementFactory.ActiveGenerator());
-            andGate.AddInput(LogicElementFactory.InactiveGenerator());
+            var andGate = LogicGate.AndGate();
+            andGate.AddInput(Generator.ActiveGenerator());
+            andGate.AddInput(Generator.InactiveGenerator());
 
             Assert.False(andGate.Output());
         }
@@ -29,9 +29,9 @@ namespace LogicGateTests
         public void One_And_One_Is_One()
         {
 
-            var andGate = LogicElementFactory.AndGate();
-            andGate.AddInput(LogicElementFactory.ActiveGenerator());
-            andGate.AddInput(LogicElementFactory.ActiveGenerator());
+            var andGate = LogicGate.AndGate();
+            andGate.AddInput(Generator.ActiveGenerator());
+            andGate.AddInput(Generator.ActiveGenerator());
 
             Assert.True(andGate.Output());
         }

@@ -1,4 +1,4 @@
-﻿using LogicGates.Factory;
+﻿using LogicGates;
 using Xunit;
 
 namespace LogicGateTests
@@ -8,9 +8,9 @@ namespace LogicGateTests
         [Fact]
         public void Zero_Xor_Zero_Is_Zero()
         {
-            var xorGate = LogicElementFactory.XorGate();
-            xorGate.AddInput(LogicElementFactory.InactiveGenerator());
-            xorGate.AddInput(LogicElementFactory.InactiveGenerator());
+            var xorGate = LogicGate.XorGate();
+            xorGate.AddInput(Generator.InactiveGenerator());
+            xorGate.AddInput(Generator.InactiveGenerator());
 
             Assert.False(xorGate.Output());
         }
@@ -18,10 +18,10 @@ namespace LogicGateTests
         [Fact]
         public void Zero_Xor_Zero_Xor_One_Is_One()
         {
-            var xorGate = LogicElementFactory.XorGate();
-            xorGate.AddInput(LogicElementFactory.InactiveGenerator());
-            xorGate.AddInput(LogicElementFactory.InactiveGenerator());
-            xorGate.AddInput(LogicElementFactory.ActiveGenerator());
+            var xorGate = LogicGate.XorGate();
+            xorGate.AddInput(Generator.InactiveGenerator());
+            xorGate.AddInput(Generator.InactiveGenerator());
+            xorGate.AddInput(Generator.ActiveGenerator());
 
             Assert.True(xorGate.Output());
         }
@@ -29,10 +29,10 @@ namespace LogicGateTests
         [Fact]
         public void One_Xor_One_Xor_Zero_Is_Zero()
         {
-            var xorGate = LogicElementFactory.XorGate();
-            xorGate.AddInput(LogicElementFactory.ActiveGenerator());
-            xorGate.AddInput(LogicElementFactory.ActiveGenerator());
-            xorGate.AddInput(LogicElementFactory.InactiveGenerator());
+            var xorGate = LogicGate.XorGate();
+            xorGate.AddInput(Generator.ActiveGenerator());
+            xorGate.AddInput(Generator.ActiveGenerator());
+            xorGate.AddInput(Generator.InactiveGenerator());
 
             Assert.False(xorGate.Output());
         }

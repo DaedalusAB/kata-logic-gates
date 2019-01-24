@@ -1,4 +1,4 @@
-﻿using LogicGates.Factory;
+﻿using LogicGates;
 using Xunit;
 
 namespace LogicGateTests
@@ -9,8 +9,8 @@ namespace LogicGateTests
         [Fact]
         public void Zero_Negated_Is_One()
         {
-            var notGate = LogicElementFactory.NotGate();
-            notGate.SetInput(LogicElementFactory.InactiveGenerator());
+            var notGate = UrnaryLogicGate.NotGate();
+            notGate.SetInput(Generator.InactiveGenerator());
 
             Assert.True(notGate.Output());
         }
@@ -19,8 +19,8 @@ namespace LogicGateTests
         public void One_Negated_Is_Zero()
         {
 
-            var notGate = LogicElementFactory.NotGate();
-            notGate.SetInput(LogicElementFactory.ActiveGenerator());
+            var notGate = UrnaryLogicGate.NotGate();
+            notGate.SetInput(Generator.ActiveGenerator());
 
             Assert.False(notGate.Output());
         }

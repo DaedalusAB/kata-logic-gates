@@ -1,10 +1,11 @@
 ﻿using System;
-using LogicGates.Factory;
 
 namespace LogicGates
 {
     public class UrnaryLogicGate : IOutput
     {
+        public static UrnaryLogicGate NotGate() => new UrnaryLogicGate(input => !input.Output());
+
         private IOutput Input { get; set; }
         private Func<IOutput, bool> Logic { get; }
 
@@ -13,8 +14,11 @@ namespace LogicGates
             Logic = logic;
         }
 
-        public void SetInput(IOutput input) =>
+        public UrnaryLogicGate SetInput(IOutput input)
+        {
             Input = input;
+            return this;
+        }
 
         public bool Output() =>
             Logic(Input);

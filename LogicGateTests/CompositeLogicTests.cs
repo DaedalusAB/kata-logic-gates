@@ -1,5 +1,4 @@
-﻿using LogicGates.Builder;
-using LogicGates.Factory;
+﻿using LogicGates;
 using Xunit;
 
 namespace LogicGateTests
@@ -7,38 +6,30 @@ namespace LogicGateTests
     public class CompositeLogicTests
     {
         [Fact]
-        public void BasicCompositeCircut_WithBuilder()
+        public void BasicCompositeCircut_WithImpliedBuilder()
         {
-            var logic = new LogicBuilder()
-                .AndGate()
-                .AddFirstInput(
-                    new LogicBuilder()
-                        .OrGate()
-                        .AddFirstInput(new LogicBuilder().ActiveGenerator().Build())
-                        .AddSecondInput(new LogicBuilder().InactiveGenerator().Build())
-                        .Build()
-                )
-                .AddSecondInput(
-                    new LogicBuilder()
-                        .NotGate()
-                        .SetInput(new LogicBuilder().InactiveGenerator().Build())
-                        .Build())
-                .Build();
+            var circut =
+                LogicGate.AndGate()
+                    .AddInput(UrnaryLogicGate.NotGate()
+                        .SetInput(Generator.InactiveGenerator()))
+                    .AddInput(LogicGate.OrGate()
+                        .AddInput(Generator.InactiveGenerator())
+                        .AddInput(Generator.ActiveGenerator()));
 
-            Assert.True(logic.Output());
+            Assert.True(circut.Output());
         }
 
         [Fact]
         public void BasicCompositeCircuit()
         {
-            var notGate = LogicElementFactory.NotGate();
-            notGate.SetInput(LogicElementFactory.InactiveGenerator());
+            var notGate = UrnaryLogicGate.NotGate();
+            notGate.SetInput(Generator.InactiveGenerator());
 
-            var orGate = LogicElementFactory.OrGate();
-            orGate.AddInput(LogicElementFactory.InactiveGenerator());
-            orGate.AddInput(LogicElementFactory.ActiveGenerator());
+            var orGate = LogicGate.OrGate();
+            orGate.AddInput(Generator.InactiveGenerator());
+            orGate.AddInput(Generator.ActiveGenerator());
 
-            var andGate = LogicElementFactory.AndGate();
+            var andGate = LogicGate.AndGate();
             andGate.AddInput(notGate);
             andGate.AddInput(orGate);
 
@@ -48,22 +39,22 @@ namespace LogicGateTests
         [Fact]
         public void MediumCompositeCircut()
         {
-            var notGate1 = LogicElementFactory.NotGate();
-            notGate1.SetInput(LogicElementFactory.InactiveGenerator());
+            var notGate1 = UrnaryLogicGate.NotGate();
+            notGate1.SetInput(Generator.InactiveGenerator());
 
-            var notGate2 = LogicElementFactory.NotGate();
-            notGate2.SetInput(LogicElementFactory.ActiveGenerator());
+            var notGate2 = UrnaryLogicGate.NotGate();
+            notGate2.SetInput(Generator.ActiveGenerator());
 
-            var andGate = LogicElementFactory.AndGate();
+            var andGate = LogicGate.AndGate();
             andGate.AddInput(notGate1);
             andGate.AddInput(notGate2);
 
-            var notGate3 = LogicElementFactory.NotGate();
+            var notGate3 = UrnaryLogicGate.NotGate();
             notGate3.SetInput(andGate);
 
-            var orGate = LogicElementFactory.OrGate();
+            var orGate = LogicGate.OrGate();
             orGate.AddInput(notGate3);
-            orGate.AddInput(LogicElementFactory.InactiveGenerator());
+            orGate.AddInput(Generator.InactiveGenerator());
 
             Assert.True(orGate.Output());
         }

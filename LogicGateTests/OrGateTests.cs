@@ -1,4 +1,4 @@
-﻿using LogicGates.Factory;
+﻿using LogicGates;
 using Xunit;
 
 namespace LogicGateTests
@@ -8,9 +8,9 @@ namespace LogicGateTests
         [Fact]
         public void Zero_Or_Zero_Is_Zero()
         {
-            var orGate = LogicElementFactory.OrGate();
-            orGate.AddInput(LogicElementFactory.InactiveGenerator());
-            orGate.AddInput(LogicElementFactory.InactiveGenerator());
+            var orGate = LogicGate.OrGate();
+            orGate.AddInput(Generator.InactiveGenerator());
+            orGate.AddInput(Generator.InactiveGenerator());
 
             Assert.False(orGate.Output());
         }
@@ -18,9 +18,9 @@ namespace LogicGateTests
         [Fact]
         public void Zero_Or_One_Is_One()
         {
-            var orGate = LogicElementFactory.OrGate();
-            orGate.AddInput(LogicElementFactory.InactiveGenerator());
-            orGate.AddInput(LogicElementFactory.ActiveGenerator());
+            var orGate = LogicGate.OrGate();
+            orGate.AddInput(Generator.InactiveGenerator());
+            orGate.AddInput(Generator.ActiveGenerator());
 
             Assert.True(orGate.Output());
         }
@@ -29,9 +29,9 @@ namespace LogicGateTests
         public void One_Or_One_Is_One()
         {
 
-            var orGate = LogicElementFactory.OrGate();
-            orGate.AddInput(LogicElementFactory.ActiveGenerator());
-            orGate.AddInput(LogicElementFactory.ActiveGenerator());
+            var orGate = LogicGate.OrGate();
+            orGate.AddInput(Generator.ActiveGenerator());
+            orGate.AddInput(Generator.ActiveGenerator());
 
             Assert.True(orGate.Output());
         }
